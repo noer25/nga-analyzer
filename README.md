@@ -110,13 +110,13 @@ nga-analyzer/
     ├── options.js         # 设置页逻辑
     ├── result.js          # 结果页逻辑与渲染
     ├── result.css         # 结果页样式
-    ├── api.js             # DeepSeek API 调用模块
+    ├── api.js             # API 调用模块
     └── cache.js           # 本地缓存管理（7天过期）
 ```
 
 ## 隐私声明
 
 - 扩展不上传任何数据至开发者服务器
-- 唯一的远程通信是直接向 DeepSeek API 发送发言文本
+- 唯一的远程通信是直接向 API 发送发言文本
 - 分析结果仅缓存在浏览器本地存储中
 - 仅分析无需登录即可访问的 NGA 公开内容

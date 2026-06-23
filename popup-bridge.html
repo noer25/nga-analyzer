@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>NGA Analyzer</title>
+  <style>
+    body {
+      width: 240px;
+      padding: 16px;
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #4f6ef7;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    button:hover { background: #3b5de7; }
+    .sub { font-size: 11px; color: #888; }
+  </style>
+</head>
+<body>
+  <button id="openBtn">🔍 打开分析面板</button>
+  <p class="sub">点击按钮在新标签页中打开完整操作页面</p>
+  <script src="lib/popup-bridge.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "NGA 用户画像分析器",
+  "version": "1.0.0",
+  "description": "分析 nga.178.com 论坛用户的公开历史发言，生成多维度用户画像。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://nga.178.com/*",
+    "*://ngabbs.com/*",
+    "*://bbs.nga.cn/*"
+  ],
+  "background": {
+    "service_worker": "lib/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup-bridge.html",
+    "default_title": "NGA 用户画像分析器",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["result.html", "lib/result.js", "lib/result.css", "popup.html", "lib/popup.js", "lib/cache.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

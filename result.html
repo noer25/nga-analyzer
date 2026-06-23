@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用户画像分析结果 - NGA Analyzer</title>
+  <link rel="stylesheet" href="lib/result.css">
+</head>
+<body>
+  <div class="container">
+    <div id="loadingState" class="loading">
+      <div class="loading-spinner"></div>
+      <p>正在加载分析结果...</p>
+    </div>
+
+    <div id="errorState" class="error-box" style="display:none;">
+      <h3>⚠️ 加载失败</h3>
+      <p id="errorMessage"></p>
+      <button class="btn btn-primary" onclick="location.reload()">重试</button>
+    </div>
+
+    <div id="resultContent" style="display:none;">
+      <!-- 报告正文（用户画像分析报告） -->
+      <div class="report-card" id="reportCard">
+        <div class="report-header">
+          <span class="badge-uid">UID: <strong id="reportUid">—</strong></span>
+          <span class="badge-user">用户: <strong id="reportUser">—</strong></span>
+          <span class="badge-count" id="reportCountBadge" style="display:none;">发言 × <strong id="reportCount">—</strong></span>
+          <span class="badge-time">分析时间: <strong id="reportTime">—</strong></span>
+        </div>
+        <div class="report-body" id="reportBody">—</div>
+        <div class="report-footer" id="cacheNote">—</div>
+      </div>
+
+      <!-- 结构化补充卡片（可折叠） -->
+      <details class="detail-section">
+        <summary>📊 结构化画像数据</summary>
+        <div class="detail-cards">
+          <section class="mini-card" id="politicalCard">
+            <h3>🏛️ 政治光谱</h3>
+            <div id="politicalContent"></div>
+          </section>
+          <section class="mini-card" id="gamingCard">
+            <h3>🎮 游戏偏好</h3>
+            <div id="gamingContent"></div>
+          </section>
+          <section class="mini-card" id="personalityCard">
+            <h3>🧠 性格风格</h3>
+            <div id="personalityContent"></div>
+          </section>
+          <section class="mini-card" id="abnormalCard" style="display:none;">
+            <h3 class="warn-text">🚨 异常行为</h3>
+            <div id="abnormalContent"></div>
+          </section>
+        </div>
+      </details>
+
+      <!-- 原始发言对照 -->
+      <details class="detail-section posts-section" id="postsSection" style="display:none;">
+        <summary>📄 抓取到的原始发言（共 <span id="postsCount">0</span> 条，点击展开对照）</summary>
+        <div class="posts-list" id="postsList"></div>
+      </details>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="refreshBtn">🔄 强制刷新分析</button>
+        <button class="btn btn-secondary" id="copyBtn">📋 复制报告</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/result.js" type="module"></script>
+</body>
+</html>

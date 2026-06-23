@@ -27,7 +27,7 @@
 
 - 点击扩展工具栏图标 → 弹出窗口中点击「⚙️ 设置 API Key」
 - 或右键扩展图标 →「扩展选项」
-- 在设置页面输入你的 **DeepSeek API Key**（获取地址：https://platform.deepseek.com/api_keys）
+- 在设置页面输入你的 **API Key**
 - 点击「保存」
 
 ### 2. 获取目标用户的发帖页面 URL
